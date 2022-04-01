@@ -1,0 +1,94 @@
+<SCRIPT Language='JavaScript'>
+
+    function sovrapposizione() {
+        var a = document.getElementById('quadrante1');
+        var b = document.getElementById('quadrante2');
+
+        let contatore1 = 0;
+        let contatore2 = 0;
+
+        setInterval(function () {
+            if (contatore1 >= 500) {
+                if (contatore2 <= 500) {
+             x=parseInt(a.offsetTop);
+              x=x-1;
+            a.style.top=x;
+
+                    c=parseInt(b.offsetTop);
+                    c=c-1;
+
+              b.style.top=c;
+
+               contatore2++;
+                }
+                if (contatore1==600) {
+
+                    contatore2++;
+                }
+            } else {
+               y=parseInt(a.offsetLeft);
+              y=y+1;
+              a.style.left=y;
+              x=parseInt(a.offsetTop);
+              x=x+1;
+              a.style.top=x;
+
+
+             r=parseInt(b.offsetLeft);
+              r=r-1;
+               b.style.left=r;
+              c=parseInt(b.offsetTop);
+             c=c+1;
+            b.style.top=c;
+            contatore1++;
+            }
+
+
+        }, 2);
+    }
+
+</SCRIPT>
+
+
+<html>
+
+<head>
+    <TITLE>1 esercizio</TITLE>
+</head>
+
+<style type="text/css">
+
+
+   #quadrante1 {
+        left: 10px;
+        top: 10px;
+        background-color:yellow;
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        border-width: 3px;
+        border: solid 
+    }
+
+
+
+   #quadrante2 {
+        left: 500px;
+        top: 10px;
+        background-color: green;
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        border-width: 3px;
+        border: solid ;
+    }
+</style>
+
+
+<BODY onLoad="sovrapposizione()">
+    <DIV id='quadrante1'></DIV>
+    <DIV id='quadrante2'></DIV>
+
+</BODY>
+
+</HTML>
